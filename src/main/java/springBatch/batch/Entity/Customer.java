@@ -9,8 +9,8 @@ import java.time.LocalDate;
 @Table(name = "customers")
 public class Customer {
 
-    @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
         private Long index;
 
     public Long getIndex() {
@@ -21,6 +21,7 @@ public class Customer {
         this.index = index;
     }
 
+    @Id
     @Column(name = "customer_id")
         private String customerId;
 

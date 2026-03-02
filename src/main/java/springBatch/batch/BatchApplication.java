@@ -1,15 +1,20 @@
 package springBatch.batch;
 
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.util.TimeZone;
+
 @SpringBootApplication
+@EnableBatchProcessing
 @EnableScheduling
 public class BatchApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BatchApplication.class, args);
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        SpringApplication.run(BatchApplication.class, args);
 	}
 
 }
